@@ -1,3 +1,4 @@
 *.o
 shell
-
+.gdb_history
+create_buf

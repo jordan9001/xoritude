@@ -8,4 +8,11 @@ testing shellcode methods:
 		nasm -f bin -o main shell.s
 		xxd -i main > main.c
 		gcc main.c
-		
+	
+using create_buf.c
+	nasm -f elf64 shell.s
+	gcc -c create_buf.c
+	gcc -o create_buf create_buf.o shell.o
+	./create_buf > buf.bin
+	xxd -i buf.bin
+	// use that as an argument to DoItToIt
