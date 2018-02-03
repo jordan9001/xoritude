@@ -1,0 +1,11 @@
+testing shellcode methods:
+
+	compile to binary:
+		nasm -f elf64 shell.s
+		ld shell.o -o shell
+
+	put hex in c program:
+		nasm -f bin -o main shell.s
+		xxd -i main > main.c
+		gcc main.c
+		
